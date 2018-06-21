@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name          = 'logstash-output-thehive'
-  s.version       = '0.1.0'
+  s.version       = '0.1.1'
   s.licenses      = ['MIT']
   s.summary       = 'Sends events to a TheHive endpoint to create alerts'
   s.description   = 'This gem is a Logstash plugin required to be installed on top of the Logstash core pipeline using $LS_HOME/bin/logstash-plugin install gemname. This gem is not a stand-alone program'

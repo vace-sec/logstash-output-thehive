@@ -5,7 +5,6 @@ require "logstash/json"
 require "uri"
 require "logstash/plugin_mixins/http_client"
 require "zlib"
-require "awesome_print"
 
 # An thehive output that does nothing.
 class LogStash::Outputs::Thehive < LogStash::Outputs::Base
@@ -172,9 +171,7 @@ class LogStash::Outputs::Thehive < LogStash::Outputs::Base
   end
   
   def send_event(event, attempt)
-    body = map_event(event)
-    ap body, :indent => -2
-    body = LogStash::Json.dump(body)
+    body = LogStash::Json.dump(map_event(event))
 
     # Send the request
     url = event.sprintf(@url)
